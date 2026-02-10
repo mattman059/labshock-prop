@@ -11,10 +11,16 @@ services:
       - '443:443'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./docker-compose.yml:/app/docker/docker-compose.yml
       - portal-data:/app/config/
     networks:
       - portal_network
+
+  launcher:
+      image: zakharbz/labshock-launcher:latest
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - ./docker-compose.yml:/data/docker-compose.yml:ro
+      command: ["tail", "-f", "/dev/null"]
 
 volumes:
   portal-data:
