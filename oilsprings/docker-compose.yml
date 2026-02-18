@@ -80,7 +80,7 @@ services:
       mirror_network:
         ipv4_address: 172.16.200.3
     ports:
-      - "1444:5443"
+      - "1444:80"
     depends_on:
       - portal
     volumes:
@@ -183,7 +183,7 @@ services:
       mirror_network:
         ipv4_address: 172.16.200.4
     ports:
-      - "5443:5443"
+      - "5443:80"
     volumes:
       - portal-data:/app/portal/
     depends_on:

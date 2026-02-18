@@ -1,4 +1,4 @@
-FROM zakharbz/labshock-router:v2.0.4
+FROM zakharbz/labshock-router:v2.1.0
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
